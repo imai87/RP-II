@@ -1,36 +1,27 @@
+<div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Riscos em Carteira</h5>
+          <p class="card-text">Possui a quantia que deseja investir, mas não sabe se a sua escolha esta correta?
+              <br>
+                    Clique no link abaixo e vamos calcular o quanto de risco sua carteira tende a ter!
+          </p>
+          <a [routerLink]="['/carteiras']" class="btn btn-warning">Calcule os riscos da sua carteira aqui!</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Melhores carteiras</h5>
+          <p class="card-text">Não sabe qual carteira montar? <br>
+            <br>
 
-<div class="content">
-    <h2>Carteiras</h2>
-    <div>
-        <label for="select">Escolha sua carteira</label> <br>
-        <select class="form-control" [(ngModel)] = "ativos" >
-          <option *ngFor="let carteira of carteiras" [ngValue]="carteira.ativos"> 
-            {{carteira.nome}} 
-          </option>
-        </select>
+            
+                Vamos dar umas dicas sobre quais carteiras são uma boa pedida neste momento!</p>
+          <a href="#" class="btn btn-warning">Consulte já!</a>
+        </div>
+      </div>
     </div>
-    <div>
-        <table>
-            <thead>
-                    <tr>
-                        <th scope="col">Título</th>
-                        <th scope="col">Rendimento</th>
-                        <th scope="col">Quantidade</th>
-                        <th scope="col">% Total</th>
-                        <th scope="col">Rentabilidade Nominal</th>
-                        <th scope="col">Rentabilidade Ponderada</th>
-                    </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let ativo of ativos">
-                    <td>{{ativo.titulo}}</td>
-                    <td>{{ativo.rendimento}}</td>
-                    <td>{{ativo.qtd}}</td>
-                    <td>{{ativo.percentTotal}}</td>
-                    <td>{{ativo.rentabilidade.nominal}}</td>
-                    <td>{{ativo.rentabilidade.ponderada}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
+  </div>

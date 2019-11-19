@@ -8,7 +8,5 @@ import { carteiras } from '../carteiras';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  carteiras = carteiras;
-  ativos = null;
 
 }
