@@ -136,3 +136,4 @@ MONGODB_DATABASES = {
         "tz_aware": True, # if you using timezones in django (USE_TZ = True)
     },
 }
+

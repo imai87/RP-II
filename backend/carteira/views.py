@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework_mongoengine import viewsets
+from rest_framework_mongoengine import viewsets, generics
 
 from .models import Atual, Ativos, Historico
 from .serializers import AtualSerializer, AtivosSerializer, HistoricoSerializer
@@ -19,11 +19,11 @@ class AtivosViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         return Ativos.objects.all()
 
-class HistoricoViewSet(viewsets.ModelViewSet):
 
-    serializer_class = HistoricoSerializer
-
-    def get_queryset(self):
-        stock = self.request.query_params.get("stock", None)
-        queryset = Historico.objects.filter(stock=stock)
-        return queryset
+#class HistoricoViewSet(viewsets.ModelViewSet, generics.ListAPIView):
+#
+#   serializer_class = HistoricoSerializer
+#
+#   def get_queryset(self):
+#        stock = self.kwargs['stock']
+#        return Historico.objects.filter(stock=stock)

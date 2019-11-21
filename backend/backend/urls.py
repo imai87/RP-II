@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import include, path
 from rest_framework_mongoengine import routers
 
-from carteira.views import AtualViewSet, AtivosViewSet, HistoricoViewSet
+from carteira.views import AtualViewSet, AtivosViewSet
 
 router = routers.DefaultRouter()
 router.register(
@@ -26,11 +26,10 @@ router.register(
 router.register(
     'ativos', AtivosViewSet, basename='ativos'
 )
-router.register(
-    'historico', HistoricoViewSet, basename='historico'
-)
+#router.register(
+ #   'historico/(?P<stock>[a-z0-9]+)/$', HistoricoViewSet, basename='historico'
+#)
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls')),
     path('', include(router.urls)),
 ]
