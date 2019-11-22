@@ -24,4 +24,19 @@
         </div>
       </div>
     </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Ativos</h5>
+          <p class="card-text">Pegando a lista:<br>
+            <ul> 
+              <li *ngFor="let ativo of listAtivos"> 
+                {{ativo.Company}} - {{ativo.Stock}}
+              </li>
+            </ul>
+            <button (click)="reloadPreviousAtivos($event)">Ant</button>
+            <button (click)="reloadNextAtivos($event)">Prox</button>
+        </div>
+      </div>
+    </div>
   </div>

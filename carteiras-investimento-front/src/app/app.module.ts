@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { CarteirasComponent } from './carteiras/carteiras.component';
-import { EmpresaService } from './shared/service/empresa.service';
+import { AtivoService } from './shared/service/ativo.service';
 import { CarteiraService } from './carteiras/service/carteira.service';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,9 +22,10 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [EmpresaService, CarteiraService],
+  providers: [AtivoService, CarteiraService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

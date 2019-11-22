@@ -12,7 +12,7 @@ const httpOptions = {
 export class CarteiraService {
 constructor(private http: HttpClient) { }
 private url = environment.baseUrl;
-page = '/any';
+page = '/historico';
 public findAll(codigoany: string, nroany: number, especieany: string, selecao: string): Observable<any> {
     const params = new HttpParams()
       .append('codany', codigoany)

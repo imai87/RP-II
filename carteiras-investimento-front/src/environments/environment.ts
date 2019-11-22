@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:8270/v1'
+  baseUrl: 'https://walletrp2.herokuapp.com/api'
 };
 
 /*
