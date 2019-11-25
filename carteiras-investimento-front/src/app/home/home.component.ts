@@ -14,15 +14,14 @@ import { Ativo } from '../shared/model/ativo.model'
 export class HomeComponent {
     listAtivos: Ativo[];
     page = 0;
-    constructor(private ativoService: AtivoService) {
-      
-    }
+    constructor(private ativoService: AtivoService) {}
+    
     ngOnInit() {
       this.loadAtivos();
     }
   
     loadAtivos() {
-      this.ativoService.findAtivos(this.page)
+      this.ativoService.findAtivosAtuais(this.page)
         .subscribe(data => {          
           this.listAtivos = data;
           console.log(this.listAtivos)

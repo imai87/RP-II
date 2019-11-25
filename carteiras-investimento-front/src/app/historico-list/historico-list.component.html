@@ -1,0 +1,43 @@
+<div class="content">
+
+    
+    <div class="col-sm-12">
+        <h2>Histórico da Empresa:
+            <br>
+            {{ativo.Company}} - {{stock}}
+        </h2>
+    </div>   
+    <div class="col-sm-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Data <i class="icon-calendar"></i></th>
+                    <th scope="col">Valor Aberto <i class="icon-folder-open-alt"></i></th>
+                    <th scope="col">Valor Fechado <i class="icon-folder-close-alt"></i></th>
+                    <th scope="col">Alta <i class="icon-arrow-up text-success"></i></th>
+                    <th scope="col">Baixa <i class="icon-arrow-down text-danger"></i></th>
+                    <th scope="col">Volume <i class="icon-list-ol"></i></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ativo of listHistorico">
+                    <td>{{ativo.date}}</td>
+                    <td>{{ativo.open}}</td>
+                    <td>{{ativo.close}}</td>
+                    <td>{{ativo.high}}</td>
+                    <td>{{ativo.low}}</td>
+                    <td>{{ativo.volume}}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><button class="btn btn-warning" (click)="reloadPreviousAtivos($event)" >Ant</button></td>
+                    <td><button class="btn btn-warning" (click)="reloadNextAtivos($event)">Prox</button></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
