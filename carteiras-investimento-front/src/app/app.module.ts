@@ -10,22 +10,28 @@ import { AtivoService } from './shared/service/ativo.service';
 import { CarteiraService } from './carteiras/service/carteira.service';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { HistoricoListComponent } from './historico-list/historico-list.component';
+import { CurrencyMaskModule } from 'ng2-currency-mask'
+import { LOCALE_ID } from '@angular/core';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     HomeComponent,
-    CarteirasComponent
+    CarteirasComponent,
+    HistoricoListComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CurrencyMaskModule
   ],
-  providers: [AtivoService, CarteiraService],
+  providers: [AtivoService, CarteiraService,{provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

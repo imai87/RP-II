@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-
-import { carteiras } from '../carteiras';
+import { AtivoService } from '../shared/service/ativo.service';
 
 @Component({
   selector: 'carteiras-component',
@@ -8,7 +7,18 @@ import { carteiras } from '../carteiras';
   styleUrls: ['./carteiras.component.css']
 })
 export class CarteirasComponent {
-  carteiras = carteiras;
-  ativos = null;
+  constructor(private ativoService: AtivoService){}
+  listAtivos = [];
+
+  ngOnInit() {
+    this.buscarHistoricoAtivo();
+  }
+  
+  buscarHistoricoAtivo(){
+    this.ativoService.findAtivosAtuaisLim()
+    .subscribe(data => {          
+      this.listAtivos = data;
+    });
+  }
 
 }
